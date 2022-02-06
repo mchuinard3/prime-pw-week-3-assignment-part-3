@@ -34,7 +34,7 @@ for (let x=0; x<supplyChanges.length; x++) {
   } else if (supplyChanges[x] === 0) {
     console.log('No Change.');
   } else {
-    console.log(`Removed ${supplyChanges[x]} parts.`);
+    console.log(`Removed ${supplyChanges[x]*-1} parts.`);
   }
 }
 
@@ -48,7 +48,7 @@ for (x of supplyChanges) {
   } else if (x === 0) {
     console.log('No change.');
   } else {
-    console.log(`Removed ${x} parts.`);
+    console.log(`Removed ${x*-1} parts.`);
   }
 }
 // 8. Write a loop to determine the total number of parts available by
@@ -68,13 +68,11 @@ console.log(sum);
 //    no more boxes can be filled.
 //    Then log how many boxes were filled, and how many parts are left over.
 console.log('9. Filling boxes with a "while" loop');
-let boxes = 0;
 let parts = 572;
-while (boxes<parts) {
-  console.log(boxes);
-  boxes+=7;
+let boxes = 0;
+while (parts>=7) {
+  parts-=7;
+  boxes++;
 }
-let boxesFilled = boxes / 7;
-let partsLeftOver = parts - 567;
-console.log(`${boxesFilled} boxes were filled.`);
-console.log(`${partsLeftOver} parts are left over.`);
+console.log(`There were ${boxes} boxes filled.`);
+console.log(`There are ${parts} parts left over.`);
